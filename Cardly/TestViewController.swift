@@ -65,6 +65,7 @@ class TestViewController: UIViewController {
         falseLabel.text = "False: "
         frontLabel.text = frontArray[0]
         
+        
     }
     
     func getData() {
