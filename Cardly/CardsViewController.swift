@@ -21,16 +21,12 @@ class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
         getData()
       }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newData"), object: nil)
     }
-    
     
     @objc func getData() {
         frontArray.removeAll(keepingCapacity: false)
@@ -50,20 +46,20 @@ class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if let front = result.value(forKey: "front") as? String {
                     self.frontArray.append(front)
                 }
+                
                 if let behind = result.value(forKey: "behind") as? String {
                     self.behindArray.append(behind)
                 }
+                
                 if let id = result.value(forKey: "id") as? UUID {
                     self.idArray.append(id)
                 }
+                
                 self.tableView.reloadData()
             }
         } catch {
             print("error")
         }
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -77,7 +73,6 @@ class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let idString = idArray[indexPath.row].uuidString
                 
                 fetchRequest.predicate = NSPredicate(format: "id = %@", idString)
-                
                 fetchRequest.returnsObjectsAsFaults = false
                 
                 do {
@@ -100,34 +95,20 @@ class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                 } catch {
                                     print("error")
                                 }
-                                    
                                 break
-                                    
                             }
-                                
                         }
-                            
-                            
                     }
-                        
-                        
                 }
             } catch {
                 print("error")
             }
-                
-                
-                
-                
         }
     }
  
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return frontArray.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -135,10 +116,8 @@ class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             chosenname = frontArray[indexPath.row]
-            print("chosen" + frontArray[indexPath.row])
             chosennamebehind = behindArray[indexPath.row]
             chosennameid = idArray[indexPath.row]
             performSegue(withIdentifier: "tocreateVC2", sender: nil)
@@ -152,8 +131,6 @@ class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 destinationVC.selectedcardId = chosennameid
             }
         }
-    
-    
-  }
+}
 
 

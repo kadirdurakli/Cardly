@@ -17,14 +17,6 @@ class ViewController: UIViewController, Delegate{
         resultLabel.text = str4
     }
     
-    
-   
-    
-    
-    
-   
-    
-    
     @IBOutlet weak var lastTest: UIImageView!
     @IBOutlet weak var falseLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
@@ -43,11 +35,8 @@ class ViewController: UIViewController, Delegate{
     let behind = ""
     
     override func viewDidLoad() {
-        
-        
         if highscoreLabel.text == "High Score:"{
             highscoreLabel.text = "High Score: " + String(0)
-            print("yees")
         }
         
         self.view.bringSubviewToFront(self.resultLabel)
@@ -55,11 +44,6 @@ class ViewController: UIViewController, Delegate{
         self.view.bringSubviewToFront(self.trueLabel)
         self.view.bringSubviewToFront(self.highscoreLabel)
         super.viewDidLoad()
-        
-       
-        
-        
-        
         
         //Recognizers
         createImageView.isUserInteractionEnabled = true
@@ -73,9 +57,6 @@ class ViewController: UIViewController, Delegate{
         testyourselfImageView.isUserInteractionEnabled = true
         let thirdRecognizer = UITapGestureRecognizer(target: self, action: #selector(gotest))
         testyourselfImageView.addGestureRecognizer(thirdRecognizer)
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        
     }
     
     func getData() {
@@ -95,35 +76,27 @@ class ViewController: UIViewController, Delegate{
                 if let behind = result.value(forKey: "behind") as? String {
                     self.behindArray.append(behind)
                 }
-                
             }
         } catch {
             print("error")
         }
-        
-        
-        
     }
-    
     
     @objc func create() {
         performSegue(withIdentifier: "tocreateVC", sender: nil)
-        print("oke")
     }
     
     @objc func gocards() {
         performSegue(withIdentifier: "tocardsVC", sender: nil)
     }
     
-    @objc func gotest() {
+    @objc func gotest() { 
         getData()
-        print(frontArray.count)
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "testVC") as? TestViewController {
             if frontArray.count != 0 {
                 vc.delegate = self
                 self.present(vc, animated: true, completion: nil)
                 vc.score = highscore
-                print("okey" + String(vc.score))
             }
             if frontArray.count == 0 {
                 let alert = UIAlertController(title: "Error", message: "You don't have any cards.", preferredStyle: UIAlertController.Style.alert)
@@ -134,11 +107,8 @@ class ViewController: UIViewController, Delegate{
             frontArray.removeAll()
             behindArray.removeAll()
         }
-        
-        
     }
    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "totestVC") && highscore != 0 {
             let destinationVC = segue.destination as! TestViewController
@@ -147,13 +117,6 @@ class ViewController: UIViewController, Delegate{
         if segue.identifier == "tocreateVC" {
             let destinationVC = segue.destination as! createViewController
             destinationVC.control = true
-            
         }
-        
-        
-        
-        
     }
-    
-    
 }

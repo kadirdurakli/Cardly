@@ -15,19 +15,13 @@ class createViewController: UIViewController {
     @IBOutlet weak var behindField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     var control : Bool!
-    
-    
     var selectedname = ""
     var selectednamebehind = ""
     var selectedcardId : UUID?
     
     override func viewDidLoad() {
-        print("calisti")
-        
-        
-        
         super.viewDidLoad()
-        //recognizers
+        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
         
@@ -39,9 +33,8 @@ class createViewController: UIViewController {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cards")
             let idString = selectedcardId?.uuidString
             fetchRequest.predicate = NSPredicate(format: "id = %@", idString!)
-                       
             fetchRequest.returnsObjectsAsFaults = false
-                       
+                
             do {
                 let results = try context.fetch(fetchRequest)
                            
@@ -56,29 +49,18 @@ class createViewController: UIViewController {
                         if let behindtext = result.value(forKey: "behind") as? String {
                             behindField.text = behindtext
                         }
-                                   
-                                  
-                                   
                     }
                 }
-
             } catch{
                 print("error")
             }
-            
-            
-            
-            // Do any additional setup after loading the view.
         }
         else {
             Button.isHidden = false
             frontField.text = ""
             behindField.text = ""
-                        
         }
     }
-  
-  
 
     @IBAction func saveButton(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -91,13 +73,8 @@ class createViewController: UIViewController {
         newCard.setValue(behindField.text!, forKey: "behind")
         newCard.setValue(UUID(), forKey: "id")
         
-        
-        
-      
-        
         do {
             try context.save()
-            print("success")
         } catch {
             print("error")
         }
@@ -105,11 +82,7 @@ class createViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
-    
-    
     @objc func hideKeyboard(){
         view.endEditing(true)
     }
-    
 }

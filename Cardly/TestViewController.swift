@@ -15,13 +15,11 @@ class TestViewController: UIViewController {
     var frontArray = [String]()
     var behindArray = [String]()
     var num = Int()
-    var truePoint = Int()
+    var truePoint : Int!
     var score : Int!
     var storedhighscore : Int!
-    var falsePoint = Int()
+    var falsePoint : Int!
     var result = ""
-    
-    
     
     @IBOutlet weak var backImage: UIImageView!
     @IBOutlet weak var Button: UIButton!
@@ -34,38 +32,26 @@ class TestViewController: UIViewController {
         if score == nil {
             score = 0
         }
-        
         super.viewDidLoad()
-        
+        truePoint = 0
+        falsePoint = 0
         
         backImage.isUserInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
         backImage.addGestureRecognizer(gestureRecognizer)
-        
-        // Do any additional setup after loading the view.
+        backImage.isHidden = true
     }
-    
-   
-    
     
     override func viewDidDisappear(_ animated: Bool) {
         truePoint = 0
-        
-    
-        print("score" + String(score))
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if score != nil {
-            print("scoree" + String(score))
-        }
         getData()
         num = 1
         trueLabel.text = "True: "
         falseLabel.text = "False: "
         frontLabel.text = frontArray[0]
-        
-        
     }
     
     func getData() {
@@ -90,61 +76,42 @@ class TestViewController: UIViewController {
         } catch {
             print("error")
         }
-        
-        
-        
     }
-    
-   
-    
+
     @IBAction func checkButton(_ sender: Any) {
-        var controlNum = frontArray.count
-        
+        let controlNum = frontArray.count
         
         if (controlNum >= num) && (behindLabel.text == behindArray[num - 1]) {
-            print("success bro")
             truePoint += 1
-            trueLabel.text = String(truePoint)
-            
+            trueLabel.text = "True: " + String(truePoint)
+        }
+        if (controlNum >= num) && (behindLabel.text != behindArray[num - 1]) {
+            falsePoint += 1
+            falseLabel.text = "False: " + String(falsePoint)
         }
         
         if (num == controlNum) {
             frontLabel.text = "Test Completed"
             behindLabel.isHidden = true
             Button.isHidden = true
+            backImage.isHidden = false
 
-            if (falsePoint > truePoint) {
-                result = "You should practice more."
-            }
-            if (truePoint > falsePoint) {
-                result = "You should practice more."
-            }
-            if (falsePoint + 1 == truePoint) && (falsePoint != 0) {
-                result = "You should practice your words 2 or 3 more times."
-            }
+            
+            
             if (falsePoint == 0) && (truePoint != 0) {
                 result = "Successfully completed."
-            
             }
             
+            else {
+                result = "Practice more"
+            }
+          
             if (truePoint > score) {
                 score = truePoint
-                
-               
-                print("hata" + String((score)))
             }
-            
         }
-        if (controlNum >= num) && (behindLabel.text != behindArray[num - 1]) {
-            falsePoint += 1
-            falseLabel.text = String(falsePoint)
-        }
-        
-        
         
         if (controlNum > num) {
-            print(frontArray[num - 1])
-            print(behindArray[num - 1])
             frontLabel.text = frontArray[num]
             num += 1
         }
@@ -152,8 +119,8 @@ class TestViewController: UIViewController {
     
     @objc func backButton() {
         if let del = self.delegate {
-            let txt = "True: " + (trueLabel.text!)
-            let txt2 = "False: " + (falseLabel.text!)
+            let txt = "True: " + String(truePoint)
+            let txt2 = "False: " + String(falsePoint)
             let txt3 =  "High Score: " + String(score)
             let txt4 = score
             let txt5 = "Result: " + result
@@ -161,23 +128,8 @@ class TestViewController: UIViewController {
             del.save(str: txt, str2: txt2, str3: txt3, int: txt4!, str4: txt5)
             self.dismiss(animated: true)
         }
-        
-        
-        
-        
-       
-        
-        
-        
-        print("segue" + String(score))
-        
     }
-    
-    
-    
-    
-  
-    }
+}
 
 
 
