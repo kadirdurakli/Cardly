@@ -110,10 +110,6 @@ class ViewController: UIViewController, Delegate{
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "totestVC") && highscore != 0 {
-            let destinationVC = segue.destination as! TestViewController
-            destinationVC.score = highscore
-        }
         if segue.identifier == "tocreateVC" {
             let destinationVC = segue.destination as! createViewController
             destinationVC.control = true
