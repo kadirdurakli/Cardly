@@ -7,6 +7,9 @@
 
 import UIKit
 import CoreData
+protocol Delegate : AnyObject {
+    func save(str: String, str2: String, str3: String, int: Int, str4: String)
+}
 
 class TestViewController: UIViewController {
     var frontArray = [String]()
@@ -16,22 +19,28 @@ class TestViewController: UIViewController {
     var score : Int!
     var storedhighscore : Int!
     var falsePoint = Int()
+    var result = ""
     
-
+    
+    
+    @IBOutlet weak var backImage: UIImageView!
     @IBOutlet weak var Button: UIButton!
     @IBOutlet weak var behindLabel: UITextField!
     @IBOutlet weak var falseLabel: UILabel!
     @IBOutlet weak var trueLabel: UILabel!
     @IBOutlet weak var frontLabel: UILabel!
+    weak var delegate : Delegate?
     override func viewDidLoad() {
         if score == nil {
             score = 0
         }
         
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(title: "back", style: .plain, target: self, action: #selector(backButton))]
-                
         
+        
+        backImage.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
+        backImage.addGestureRecognizer(gestureRecognizer)
         
         // Do any additional setup after loading the view.
     }
@@ -102,6 +111,21 @@ class TestViewController: UIViewController {
             frontLabel.text = "Test Completed"
             behindLabel.isHidden = true
             Button.isHidden = true
+
+            if (falsePoint > truePoint) {
+                result = "You should practice more."
+            }
+            if (truePoint > falsePoint) {
+                result = "You should practice more."
+            }
+            if (falsePoint + 1 == truePoint) && (falsePoint != 0) {
+                result = "You should practice your words 2 or 3 more times."
+            }
+            if (falsePoint == 0) && (truePoint != 0) {
+                result = "Successfully completed."
+            
+            }
+            
             if (truePoint > score) {
                 score = truePoint
                 
@@ -126,11 +150,20 @@ class TestViewController: UIViewController {
     }
     
     @objc func backButton() {
+        if let del = self.delegate {
+            let txt = "True: " + (trueLabel.text!)
+            let txt2 = "False: " + (falseLabel.text!)
+            let txt3 =  "High Score: " + String(score)
+            let txt4 = score
+            let txt5 = "Result: " + result
+            
+            del.save(str: txt, str2: txt2, str3: txt3, int: txt4!, str4: txt5)
+            self.dismiss(animated: true)
+        }
         
         
         
         
-        self.navigationController?.popViewController(animated: true)
        
         
         
@@ -138,27 +171,7 @@ class TestViewController: UIViewController {
         print("segue" + String(score))
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(score)
-        if (segue.identifier == "vc") && (truePoint > score) {
-            
-            
-            print("suu")
-            let destinationVC = segue.destination as! ViewController
-            
-            destinationVC.highscore = score
-            
-        }
-        if (segue.identifier == "vc") && (truePoint <= score) {
-            
-            
-            let destinationVC = segue.destination as! ViewController
-            destinationVC.highscore = score
-            destinationVC.truecount = truePoint
-            destinationVC.falsecount = falsePoint
-            print("ikincisegue" + String(score))
-        }
-    }
+    
     
     
     

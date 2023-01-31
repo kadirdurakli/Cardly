@@ -33,7 +33,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-uL-dGz">
-                                <rect key="frame" x="157" y="629" width="61" height="35"/>
+                                <rect key="frame" x="157" y="676" width="61" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save"/>
@@ -83,29 +83,29 @@
                                 <rect key="frame" x="29" y="282" width="316" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="true" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-eL-DmN">
-                                <rect key="frame" x="47" y="428" width="108" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="True:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-eL-DmN">
+                                <rect key="frame" x="47" y="440" width="108" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="false" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IR5-Pi-ILs">
-                                <rect key="frame" x="52" y="468" width="117" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="False:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IR5-Pi-ILs">
+                                <rect key="frame" x="52" y="480" width="117" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mE4-YE-6lB">
-                                <rect key="frame" x="52" y="550" width="108" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mE4-YE-6lB">
+                                <rect key="frame" x="52" y="550" width="293" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="high score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqq-gg-f75">
-                                <rect key="frame" x="52" y="511" width="221" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqq-gg-f75">
+                                <rect key="frame" x="52" y="523" width="221" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
@@ -131,7 +131,6 @@
                         <outlet property="trueLabel" destination="j0v-eL-DmN" id="A6A-cy-pYQ"/>
                         <segue destination="7Jx-Yv-8p3" kind="show" identifier="tocardsVC" id="e2k-Gv-sXC"/>
                         <segue destination="rbO-bf-Mut" kind="show" identifier="tocreateVC" id="rqN-fa-Dea"/>
-                        <segue destination="pSK-M6-88W" kind="show" identifier="totestVC" id="BDZ-vA-x4c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,9 +140,9 @@
         <!--Test View Controller-->
         <scene sceneID="Z7X-Zh-2GI">
             <objects>
-                <viewController id="pSK-M6-88W" customClass="TestViewController" customModule="Cardly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="testVC" modalPresentationStyle="fullScreen" id="pSK-M6-88W" customClass="TestViewController" customModule="Cardly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k3Q-km-JDZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="New Card" translatesAutoresizingMaskIntoConstraints="NO" id="flH-Yw-1X5">
@@ -186,6 +185,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="f13-PJ-0q3">
+                                <rect key="frame" x="10" y="47" width="80" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vAH-vk-maP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -193,11 +196,11 @@
                     <navigationItem key="navigationItem" id="SL9-r8-wzj"/>
                     <connections>
                         <outlet property="Button" destination="Dt8-jq-27a" id="fVq-gt-rhZ"/>
+                        <outlet property="backImage" destination="f13-PJ-0q3" id="1R3-Me-A3z"/>
                         <outlet property="behindLabel" destination="eiC-Ns-Iqe" id="hQb-JH-ZZT"/>
                         <outlet property="falseLabel" destination="jTh-MP-tGd" id="WIV-KN-uOo"/>
                         <outlet property="frontLabel" destination="bqs-gq-0mL" id="G6a-99-beT"/>
                         <outlet property="trueLabel" destination="3dX-vM-Tbs" id="X6j-oF-gnZ"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="vc" id="Ulw-bS-oEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCm-ms-LiG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -212,27 +215,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bTv-I7-TtQ">
-                                <rect key="frame" x="0.0" y="105" width="375" height="650"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bTv-I7-TtQ">
+                                <rect key="frame" x="0.0" y="149" width="375" height="606"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Your Cards" id="4uj-t6-LLJ">
-                                <rect key="frame" x="23" y="97" width="184" height="44"/>
+                                <rect key="frame" x="16" y="90" width="184" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pok-dM-ueG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bTv-I7-TtQ" firstAttribute="top" secondItem="pok-dM-ueG" secondAttribute="top" constant="58" id="1FG-Q2-p7r"/>
-                            <constraint firstItem="bTv-I7-TtQ" firstAttribute="top" secondItem="pok-dM-ueG" secondAttribute="top" constant="58" id="K7Z-8t-jjB"/>
-                            <constraint firstAttribute="bottom" secondItem="bTv-I7-TtQ" secondAttribute="bottom" constant="34" id="Qrt-na-wmf"/>
-                            <constraint firstItem="bTv-I7-TtQ" firstAttribute="leading" secondItem="pok-dM-ueG" secondAttribute="leading" id="d0Y-je-Bd4"/>
-                            <constraint firstItem="bTv-I7-TtQ" firstAttribute="leading" secondItem="pok-dM-ueG" secondAttribute="leading" id="h0J-Jk-vJn"/>
-                            <constraint firstItem="pok-dM-ueG" firstAttribute="bottom" secondItem="bTv-I7-TtQ" secondAttribute="bottom" id="ilP-LF-mCa"/>
-                            <constraint firstItem="bTv-I7-TtQ" firstAttribute="trailing" secondItem="pok-dM-ueG" secondAttribute="trailing" id="rF5-DO-9co"/>
-                            <constraint firstItem="pok-dM-ueG" firstAttribute="trailing" secondItem="bTv-I7-TtQ" secondAttribute="trailing" id="tWn-8C-PW6"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8fh-5D-Ey4"/>
                     <connections>
@@ -264,13 +258,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ulw-bS-oEt"/>
+        <segue reference="rHq-YH-vNF"/>
         <segue reference="rqN-fa-Dea"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Cardly" width="101" height="30.333333969116211"/>
         <image name="Cards" width="337" height="52"/>
         <image name="Create New Card" width="337" height="52"/>
+        <image name="Image" width="53" height="19"/>
         <image name="Last Test" width="337" height="277"/>
         <image name="New Card" width="347" height="369"/>
         <image name="Test Yourself" width="337" height="52"/>

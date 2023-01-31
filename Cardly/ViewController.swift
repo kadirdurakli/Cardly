@@ -7,7 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Delegate{
+    func save(str: String, str2: String, str3: String, int: Int, str4: String) {
+        trueLabel.text = str
+        falseLabel.text = str2
+        highscoreLabel.text = str3
+        highscore = int
+        resultLabel.text = str4
+    }
+    
+   
+    
+    
+    
+   
     
     
     @IBOutlet weak var lastTest: UIImageView!
@@ -18,12 +31,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var createImageView: UIImageView!
     @IBOutlet weak var testyourselfImageView: UIImageView!
     @IBOutlet weak var cardsImageView: UIImageView!
-    var highscore : Int!
+    var highscore = 0
     var truecount : Int!
     var falsecount : Int!
     let front = ""
     let behind = ""
+    
     override func viewDidLoad() {
+        if highscoreLabel.text == "High Score:"{
+            highscoreLabel.text = "High Score: " + String(0)
+            print("yees")
+        }
         
         self.view.bringSubviewToFront(self.resultLabel)
         self.view.bringSubviewToFront(self.falseLabel)
@@ -31,24 +49,7 @@ class ViewController: UIViewController {
         self.view.bringSubviewToFront(self.highscoreLabel)
         super.viewDidLoad()
         
-        if highscore != nil {
-            highscoreLabel.text = "High Score: " + String(highscore)
-        }
-        else {
-            highscoreLabel.text = "High Score:"
-        }
-        if truecount != nil {
-            trueLabel.text = "True: " + String(truecount)
-        }
-        else {
-            trueLabel.text = "True:"
-        }
-        if falsecount != nil {
-            falseLabel.text = "False: " + String(falsecount)
-        }
-        else {
-            falseLabel.text = "False:"
-        }
+       
         
         
         
@@ -78,8 +79,16 @@ class ViewController: UIViewController {
     }
     
     @objc func gotest() {
-        performSegue(withIdentifier: "totestVC", sender: nil)
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "testVC") as? TestViewController {
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+            vc.score = highscore
+            print("okey" + String(vc.score))
+        }
+        
+        
     }
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "totestVC") && highscore != 0 {
