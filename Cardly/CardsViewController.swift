@@ -10,6 +10,7 @@ import CoreData
 
 class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var backButton: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var frontArray = [String]()
     var idArray = [UUID]()
@@ -18,6 +19,9 @@ class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var chosennamebehind = ""
     var chosennameid : UUID?
     override func viewDidLoad() {
+        backButton.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backclicked))
+        backButton.addGestureRecognizer(gestureRecognizer)
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
@@ -26,6 +30,9 @@ class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newData"), object: nil)
+    }
+    @objc func backclicked() {
+        self.dismiss(animated: true)
     }
     
     @objc func getData() {
@@ -120,17 +127,19 @@ class CardsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             chosenname = frontArray[indexPath.row]
             chosennamebehind = behindArray[indexPath.row]
             chosennameid = idArray[indexPath.row]
-            performSegue(withIdentifier: "tocreateVC2", sender: nil)
+            gocreatevc()
+            
         }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "tocreateVC2" {
-                let destinationVC = segue.destination as! createViewController
-                destinationVC.selectedname = chosenname
-                destinationVC.selectednamebehind = chosennamebehind
-                destinationVC.selectedcardId = chosennameid
-            }
+   
+    func gocreatevc() {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "createVC") as? createViewController {
+            vc.selectedname = chosenname
+            vc.selectednamebehind = chosennamebehind
+            vc.selectedcardId = chosennameid
+            self.present(vc, animated: true)
         }
+    }
 }
 
 

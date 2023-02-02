@@ -79,6 +79,7 @@ class TestViewController: UIViewController {
     }
 
     @IBAction func checkButton(_ sender: Any) {
+        
         let controlNum = frontArray.count
         
         if (controlNum >= num) && (behindLabel.text == behindArray[num - 1]) {
@@ -115,6 +116,7 @@ class TestViewController: UIViewController {
             frontLabel.text = frontArray[num]
             num += 1
         }
+        behindLabel.text = ""
     }
     
     @objc func backButton() {

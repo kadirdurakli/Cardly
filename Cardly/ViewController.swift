@@ -83,11 +83,15 @@ class ViewController: UIViewController, Delegate{
     }
     
     @objc func create() {
-        performSegue(withIdentifier: "tocreateVC", sender: nil)
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "createVC") as? createViewController {
+            self.present(vc, animated: true)
+        }
     }
     
     @objc func gocards() {
-        performSegue(withIdentifier: "tocardsVC", sender: nil)
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "cardsVC") as? CardsViewController {
+            self.present(vc, animated: true)
+        }
     }
     
     @objc func gotest() { 
@@ -106,13 +110,6 @@ class ViewController: UIViewController, Delegate{
             }
             frontArray.removeAll()
             behindArray.removeAll()
-        }
-    }
-   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "tocreateVC" {
-            let destinationVC = segue.destination as! createViewController
-            destinationVC.control = true
         }
     }
 }

@@ -11,15 +11,11 @@
         <!--Create View Controller-->
         <scene sceneID="ZFa-CJ-HVl">
             <objects>
-                <viewController id="rbO-bf-Mut" customClass="createViewController" customModule="Cardly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createVC" modalPresentationStyle="fullScreen" id="rbO-bf-Mut" customClass="createViewController" customModule="Cardly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tHP-KQ-ekb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="New Card" translatesAutoresizingMaskIntoConstraints="NO" id="XRm-Y7-f9H">
-                                <rect key="frame" x="46" y="113" width="282" height="351"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Front of card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haK-cf-Wg2">
                                 <rect key="frame" x="46" y="490" width="282" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -41,6 +37,14 @@
                                     <action selector="saveButton:" destination="rbO-bf-Mut" eventType="touchUpInside" id="0u0-vP-O4O"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="bdQ-P9-z4r">
+                                <rect key="frame" x="16" y="47" width="68" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="New Card" translatesAutoresizingMaskIntoConstraints="NO" id="XRm-Y7-f9H">
+                                <rect key="frame" x="40" y="113" width="295" height="316"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oGB-tM-CyM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,10 +52,10 @@
                     <navigationItem key="navigationItem" id="hI9-e2-OUQ"/>
                     <connections>
                         <outlet property="Button" destination="pVC-uL-dGz" id="a4q-Gm-nfC"/>
+                        <outlet property="backButton" destination="bdQ-P9-z4r" id="u5M-hC-bId"/>
                         <outlet property="behindField" destination="mLW-8z-4yX" id="aw6-tz-KDn"/>
                         <outlet property="frontField" destination="haK-cf-Wg2" id="1N7-Kb-BlI"/>
                         <outlet property="imageView" destination="XRm-Y7-f9H" id="nlF-wN-4sC"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="tovc" id="rHq-YH-vNF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDQ-Wa-vVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -63,24 +67,24 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cardly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cardly" translatesAutoresizingMaskIntoConstraints="NO" id="i4m-Sq-jyd">
-                                <rect key="frame" x="16" y="82" width="139" height="32"/>
+                                <rect key="frame" x="16" y="81" width="139" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cards" translatesAutoresizingMaskIntoConstraints="NO" id="SRY-tU-qRG">
-                                <rect key="frame" x="29" y="128" width="316" height="59"/>
+                                <rect key="frame" x="33" y="131" width="309" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Test Yourself" translatesAutoresizingMaskIntoConstraints="NO" id="iKP-7a-9A6">
-                                <rect key="frame" x="29" y="205" width="316" height="55"/>
+                                <rect key="frame" x="33" y="204" width="309" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Create New Card" translatesAutoresizingMaskIntoConstraints="NO" id="sgy-m1-MdQ">
-                                <rect key="frame" x="29" y="282" width="316" height="55"/>
+                                <rect key="frame" x="33" y="278" width="309" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="True:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-eL-DmN">
@@ -98,23 +102,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqq-gg-f75">
-                                <rect key="frame" x="52" y="501" width="219" height="24"/>
+                                <rect key="frame" x="52" y="505" width="219" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mE4-YE-6lB">
+                                <rect key="frame" x="52" y="545" width="286" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Last Test" highlightedImage="Last Test" translatesAutoresizingMaskIntoConstraints="NO" id="Jsw-bc-bxa">
-                                <rect key="frame" x="29" y="353" width="316" height="278"/>
+                                <rect key="frame" x="33" y="347" width="309" height="254"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mE4-YE-6lB">
-                                <rect key="frame" x="52" y="533" width="286" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -129,8 +133,6 @@
                         <outlet property="resultLabel" destination="mE4-YE-6lB" id="Fr4-Tx-fWI"/>
                         <outlet property="testyourselfImageView" destination="iKP-7a-9A6" id="bCd-xH-aou"/>
                         <outlet property="trueLabel" destination="j0v-eL-DmN" id="A6A-cy-pYQ"/>
-                        <segue destination="7Jx-Yv-8p3" kind="show" identifier="tocardsVC" id="e2k-Gv-sXC"/>
-                        <segue destination="rbO-bf-Mut" kind="show" identifier="tocreateVC" id="rqN-fa-Dea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -156,7 +158,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dt8-jq-27a">
-                                <rect key="frame" x="151" y="597" width="73" height="35"/>
+                                <rect key="frame" x="151" y="603" width="73" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Check"/>
@@ -178,17 +180,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="f13-PJ-0q3">
+                                <rect key="frame" x="10" y="47" width="76" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="False:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTh-MP-tGd">
-                                <rect key="frame" x="253" y="651" width="75" height="35"/>
+                                <rect key="frame" x="259" y="651" width="75" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="f13-PJ-0q3">
-                                <rect key="frame" x="10" y="47" width="80" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vAH-vk-maP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -210,9 +212,9 @@
         <!--Cards View Controller-->
         <scene sceneID="2FB-CC-BkA">
             <objects>
-                <viewController id="7Jx-Yv-8p3" customClass="CardsViewController" customModule="Cardly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cardsVC" modalPresentationStyle="fullScreen" id="7Jx-Yv-8p3" customClass="CardsViewController" customModule="Cardly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JGj-Vt-zZQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bTv-I7-TtQ">
@@ -221,7 +223,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Your Cards" id="4uj-t6-LLJ">
-                                <rect key="frame" x="16" y="90" width="184" height="44"/>
+                                <rect key="frame" x="16" y="89" width="184" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="HQF-yE-IFp">
+                                <rect key="frame" x="7" y="53" width="66" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -230,8 +236,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="8fh-5D-Ey4"/>
                     <connections>
+                        <outlet property="backButton" destination="HQF-yE-IFp" id="h3W-d2-N7e"/>
                         <outlet property="tableView" destination="bTv-I7-TtQ" id="QpB-Vi-HGk"/>
-                        <segue destination="rbO-bf-Mut" kind="show" identifier="tocreateVC2" id="hlU-mP-7kS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KhY-OA-at4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -241,10 +247,9 @@
         <!--Navigation Controller-->
         <scene sceneID="sbg-l0-2qr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8FB-cx-PiV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8FB-cx-PiV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cO5-F7-UE6">
-                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -257,10 +262,6 @@
             <point key="canvasLocation" x="125.59999999999999" y="3.6945812807881775"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="rHq-YH-vNF"/>
-        <segue reference="rqN-fa-Dea"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Cardly" width="101" height="30.333333969116211"/>
         <image name="Cards" width="337" height="52"/>

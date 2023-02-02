@@ -10,6 +10,7 @@ import CoreData
 
 
 class createViewController: UIViewController {
+    @IBOutlet weak var backButton: UIImageView!
     @IBOutlet weak var frontField: UITextField!
     @IBOutlet weak var Button: UIButton!
     @IBOutlet weak var behindField: UITextField!
@@ -21,6 +22,9 @@ class createViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.isUserInteractionEnabled = true
+        let gestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(backclicked))
+        backButton.addGestureRecognizer(gestureRecognizer2)
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
@@ -61,6 +65,10 @@ class createViewController: UIViewController {
             behindField.text = ""
         }
     }
+    
+    @objc func backclicked() {
+        self.dismiss(animated: true)
+    }
 
     @IBAction func saveButton(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -79,7 +87,7 @@ class createViewController: UIViewController {
             print("error")
         }
         NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     @objc func hideKeyboard(){
