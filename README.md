@@ -1,4 +1,4 @@
-UIKit ile geliştirdiğim Cardly ile yeni öğrendiğiniz kelimeleri kart mantığı ile uygulamaya kaydedebilirsiniz. Kaydettiğiniz kelimenin anlamını unutursanız da "Cards" bölümünden bakabiliyorsunuz. Ayrıca kendinizi pekiştirmek için kaydettiğiniz kelimeler ile kendinizi test edebilirsiniz.
+With Cardly, which I developed using UIKit, you can save newly learned words into the app using a card-based approach. If you forget the meaning of a saved word, you can look it up in the "Cards" section. You can also test yourself with the saved words to reinforce your skills.
 
 <img width="459" alt="Cardly main screen" src="https://user-images.githubusercontent.com/71133839/216610610-d2924672-7986-4cdd-a512-297a8c30fa8c.png">
 <img width="503" alt="Cardly cards screen" src="https://user-images.githubusercontent.com/71133839/216610770-59c1dff9-54eb-40c5-9d8d-afb4720ed8db.png">
